@@ -16,17 +16,18 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/libs/modernizr-2.0.6.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 	<div id="header-container">
 		<header class="wrapper clearfix">
-			<h1 id="title">h1#title</h1>
+			<h1 id="title">Mjanja mirror service</h1>
 			<nav>
 				<ul>
-					<li><a href="#">nav ul li a</a></li>
-					<li><a href="#">nav ul li a</a></li>
-					<li><a href="#">nav ul li a</a></li>
+					<li><a href="#arch">Arch</a></li>
+					<li><a href="#centos">CentOS</a></li>
+					<li><a href="#epel">EPEL</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -36,34 +37,59 @@
 			
 			<article>
 				<header>
-					<h1>article header h1</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
+					<h2>Mirrors</h2>
+					<p>Officially unofficial mirrors for various GNU/Linux package repositories. Hosted in Nairobi, Kenya. Born out of personal/institutional necessity, offered to the community as a service. When traffic is local (ie using KENET, Jamii, Zuku, etc) the speeds are several orders of magnitude faster than mirrors in the US, Europe, etc.</p>
+					<p>Faster updates, less international traffic, and giving something back to the community; everybody wins!</p>
 				</header>
 				<section>
-					<h2>article section h2</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+					<h3 id="arch">Arch Linux</h3>
+					<p>Add the following to the top of your <code>/etc/pacman.d/mirrorlist</code>:</p>
+					<pre><code>Server = http://mirror.mjanja.co.ke/archlinux/$repo/os/$arch</code></pre>
 				</section>
 				<section>
-					<h2>article section h2</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
+					<h3 id="centos">CentOS</h3>
+					<p>Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/CentOS-Base.repo</code>, ie:
+					<pre><code>[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirror.mjanja.co.ke/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</code></pre>
+</p>
+				<p>Alternatively, download this <code><a href="CentOS-Base.repo">CentOS-Base.repo</a></code>.</p>
 				</section>
 				<footer>
-					<h3>article footer h3</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+					<h3 id="epel">EPEL</h3>
+					<p>Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/epel.repo</code>, ie:
+					<pre><code>[epel]
+name=Extra Packages for Enterprise Linux 6 - $basearch
+baseurl=http://mirror.mjanja.co.ke/epel/6/$basearch
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6</pre></code>
+</p>
+				<p>Alternatively, download this <code><a href="epel.repo">epel.repo</a></code>.</p>
 				</footer>
 			</article>
 			
 			<aside>
-				<h3>aside</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+				<h3>About</h3>
+					<p>Hardware and bandwidth courtesy of <a href="http://ilri.org" title="International Livestock Research Institute">ILRI</a>, Kenya. Time and energy courtesy of <a href="http://mjanja.co.ke" title="Mjanja Tech blog">Alan Orth</a>.</p>
+				<p>Both <a href="https://github.com/alanorth/mirror.mjanja.co.ke" title="mirror.mjanja.co.ke on GitHub">this site</a> and the <a href="https://github.com/alanorth/hpc_infrastructure_scripts/tree/master/mirror" title="Mirror scripts on GitHub">mirror scripts</a> themselves are available on GitHub.</p>
+				<h3>gr33tz</h3>
+				<p><ul>
+<li><a href="http://kenet.or.ke/" title="Kenya Educational Network">KENET</a>
+<li><a href="http://angani.co/" title="Kenya-based private cloud provider (CloudStack)">Angani</a>
+<li><a href="http://kili.io" title="Kenya-based private cloud provider (OpenStack)">Kili.io</a>
+</ul></p>
 			</aside>
-			
+
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
 
 	<div id="footer-container">
 		<footer class="wrapper">
-			<h3>footer</h3>
+			<h3>Powered by GNU/Linux, GlusterFS and coffee.</h3>
 		</footer>
 	</div>
 

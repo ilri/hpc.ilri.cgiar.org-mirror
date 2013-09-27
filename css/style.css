@@ -9,14 +9,13 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin: 0; font-size: 13px; line-height: 1.231; }
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body, button, input, select, textarea { font-family: sans-serif; color: #1d1d1d; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #2D89EF; color: #fff; text-shadow: none; }
+::selection { background: #2D89EF; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #06a9ef; text-decoration: none; }
+a:hover { text-decoration: underline; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -68,7 +67,7 @@ td { vertical-align: top; }
     Author: Jonathan Verrecchia
    =================================================== */
 
-body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; }
+body{ font:16px/24px Raleway, Helvetica, Helvetica Neue, Arial, sans-serif; }
 
 .wrapper{
 	width:90%;
@@ -76,23 +75,25 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; }
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: Modern Theme
    =================== */
 
-#header-container{ border-bottom: 20px solid #e44d26; }
-#footer-container{ border-top:    20px solid #e44d26; }
-#main aside      { border-top:    20px solid #e44d26; }
+#main aside      { border-top:    10px solid #f05444; }
 
 #header-container,
 #footer-container,
 #main aside{
-	background:#f16529;
+	background:#333;
 }
 
-#title{ color:white; }
+#title{ color:#eff4ff; }
 
-::-moz-selection { background: #f16529; color: #fff; text-shadow: none; }
-::selection      { background: #f16529; color: #fff; text-shadow: none; }
+::-moz-selection { background: #2D89EF; color: #fff; text-shadow: none; }
+::selection      { background: #2D89EF; color: #fff; text-shadow: none; }
+
+h1, h2, h3 {
+    font-family: Raleway, Helvetica, Helvetica Neue, Arial, sans-serif;
+}
 
 /* ==============
     MOBILE: Menu
@@ -103,16 +104,14 @@ nav a{
 	margin-bottom:10px;
 	padding:15px 0;
 
-	background:#e44d26;
-	color:white;
+	color:#eff4ff;
 
 	text-align:center;
 	text-decoration:none;
-	font-weight:bold;
 }
 
 nav a:hover, nav a:visited{
-	color:white;
+	color:#eff4ff;
 }
 
 nav a:hover{
@@ -132,12 +131,12 @@ nav a:hover{
 }
 
 #main aside{
-	color:white;
+	color:#eff4ff;
 	padding:0px 5% 10px;
 }
 
 #footer-container footer{
-	color:white;
+	color:#eff4ff;
 	padding:20px 0;
 }
 
