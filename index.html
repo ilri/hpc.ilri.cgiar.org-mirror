@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    </head>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'> 
+   </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -22,12 +23,12 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
+                <h1 class="title">Mjanja mirror service</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
+					    <li><a href="#arch">Arch</a></li>
+					    <li><a href="#centos">CentOS</a></li>
+					    <li><a href="#epel">EPEL</a></li>
                     </ul>
                 </nav>
             </header>
@@ -38,26 +39,51 @@
 
                 <article>
                     <header>
-                        <h1>article header h1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-                    </header>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <section>
-                        <h2>article section h2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-                    </section>
-                    <footer>
-                        <h3>article footer h3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
-                    </footer>
+					<h2>Mirrors</h2>
+					<p>Officially unofficial mirrors for various GNU/Linux package repositories. Hosted in Nairobi, Kenya. Born out of personal/institutional necessity, offered to the community as a service. When traffic is local (ie using KENET, Jamii, Zuku, etc) the speeds are several orders of magnitude faster than mirrors in the US, Europe, etc.</p>
+					<p>Faster updates, less international traffic, and giving something back to the community; everybody wins!</p>
+				</header>
+				<section>
+					<h3 id="arch">Arch Linux</h3>
+					<p>Add the following to the top of your <code>/etc/pacman.d/mirrorlist</code>:</p>
+					<pre><code>Server = http://mirror.mjanja.co.ke/archlinux/$repo/os/$arch</code></pre>
+				</section>
+				<section>
+					<h3 id="centos">CentOS</h3>
+					<p>Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/CentOS-Base.repo</code>, ie:
+					<pre><code>[base]
+name=CentOS-$releasever - Base
+baseurl=http://mirror.mjanja.co.ke/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</code></pre>
+</p>
+				<p>Alternatively, download this <code><a href="CentOS-Base.repo">CentOS-Base.repo</a></code>.</p>
+				</section>
+				<section>
+					<h3 id="epel">EPEL</h3>
+					<p>Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/epel.repo</code>, ie:
+					<pre><code>[epel]
+name=Extra Packages for Enterprise Linux 6 - $basearch
+baseurl=http://mirror.mjanja.co.ke/epel/6/$basearch
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6</pre></code>
+</p>
+				<p>Alternatively, download this <code><a href="epel.repo">epel.repo</a></code>.</p>
+				</section>
                 </article>
 
                 <aside>
-                    <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+				    <h3>About</h3>
+					    <p>Hardware and bandwidth courtesy of <a href="http://ilri.org" title="International Livestock Research Institute">ILRI</a>, Kenya. Time and energy courtesy of <a href="http://mjanja.co.ke" title="Mjanja Tech blog">Alan Orth</a>.</p>
+				    <p>Both <a href="https://github.com/alanorth/mirror.mjanja.co.ke" title="mirror.mjanja.co.ke on GitHub">this site</a> and the <a href="https://github.com/alanorth/hpc_infrastructure_scripts/tree/master/mirror" title="Mirror scripts on GitHub">mirror scripts</a> themselves are available on GitHub.</p>
+				    <h3>gr33tz</h3>
+				    <p><ul>
+<li><a href="http://kenet.or.ke/" title="Kenya Educational Network">KENET</a>
+<li><a href="http://angani.co/" title="Kenya-based private cloud provider (CloudStack)">Angani</a>
+<li><a href="http://kili.io" title="Kenya-based private cloud provider (OpenStack)">Kili.io</a>
+</ul></p>
                 </aside>
 
             </div> <!-- #main -->
@@ -65,20 +91,23 @@
 
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>footer</h3>
+                <h3>Powered by GNU/Linux, GlusterFS and coffee.</h3>
             </footer>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script type="text/javascript">
 
-        <script src="js/main.js"></script>
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-730843-6']);
+          _gaq.push(['_setDomainName', 'mjanja.co.ke']);
+          _gaq.push(['_trackPageview']);
 
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
         </script>
     </body>
 </html>
