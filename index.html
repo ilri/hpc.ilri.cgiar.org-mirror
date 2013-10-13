@@ -28,7 +28,7 @@
                     <ul>
                         <li><a href="#arch">Arch</a></li>
                         <li><a href="#centos">CentOS</a></li>
-                        <li><a href="#epel">EPEL</a></li>
+                        <li><a href="#fedora">Fedora</a></li>
                     </ul>
                 </nav>
             </header>
@@ -58,9 +58,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</code></pre>
 </p>
                 <p>Alternatively, download this <code><a href="CentOS-Base.repo">CentOS-Base.repo</a></code>.</p>
-                </section>
-                <section>
-                    <h3 id="epel">EPEL</h3>
+                <p><strong>EPEL is also available</strong>. Use:
                     <p>Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/epel.repo</code>, ie:
                     <pre><code>[epel]
 name=Extra Packages for Enterprise Linux 6 - $basearch
@@ -72,6 +70,21 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6</code></pre>
 </p>
                 <p>Alternatively, download this <code><a href="epel.repo">epel.repo</a></code>.</p>
                 </section>
+                <section>
+                    <h3 id="fedora">Fedora</h3>
+                    <p>Currently provides Fedora 18 and 19, no debug or SRPMs.  Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/fedora{-updates}.repo</code>, ie:
+                    <pre><code>[fedora]
+name=Fedora $releasever - $basearch
+failovermethod=priority
+baseurl=http://mirror.mjanja.co.ke/fedora/linux/releases/$releasever/Everything/$basearch/os/
+enabled=1
+metadata_expire=7d
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch</code></pre>
+</p>
+                <p>Alternatively, download <code><a href="fedora.repo">fedora.repo</a></code> and <code><a href="fedora-updates.repo">fedora-updates.repo</a></code>.</p>
+                </section>
+
                 </article>
 
                 <aside>
