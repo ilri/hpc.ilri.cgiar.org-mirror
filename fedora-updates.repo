@@ -1,7 +1,7 @@
 [updates]
 name=Fedora $releasever - $basearch - Updates
 failovermethod=priority
-baseurl=http://mirror.mjanja.co.ke/fedora/linux/updates/$releasever/$basearch/
+baseurl=http://hpc.ilri.cgiar.org/mirror/fedora/linux/updates/$releasever/$basearch/
 #mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch
 enabled=1
 gpgcheck=1
