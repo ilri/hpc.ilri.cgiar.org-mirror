@@ -55,9 +55,9 @@
                     <p>Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/CentOS-Base.repo</code>, ie:
                     <pre><code>[base]
 name=CentOS-$releasever - Base
-baseurl=http://mirror.mjanja.co.ke/centos/$releasever/os/$basearch/
+baseurl=http://hpc.ilri.cgiar.org/mirror/centos/$releasever/os/$basearch/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</code></pre>
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever</code></pre>
 </p>
                 <p>Alternatively, download this <code><a href="CentOS-Base.repo">CentOS-Base.repo</a></code>.</p>
                 <p><strong>EPEL is also available</strong>. Use:
