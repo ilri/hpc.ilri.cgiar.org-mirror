@@ -74,15 +74,17 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6</code></pre>
                 </section>
                 <section>
                     <h3 id="fedora">Fedora</h3>
-                    <p>Currently provides Fedora 18 - 22 (no debug, armhfp, or SRPMs).  Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/fedora{-updates}.repo</code>, ie:
+                    <p>Currently provides Fedora 21 & 22 (no debug, armhfp, or SRPMs).  Use <em>mirror.mjanja.co.ke</em> in your <code>/etc/yum.repos.d/fedora{-updates}.repo</code>, ie:
                     <pre><code>[fedora]
 name=Fedora $releasever - $basearch
 failovermethod=priority
-baseurl=http://mirror.mjanja.co.ke/fedora/linux/releases/$releasever/Everything/$basearch/os/
+baseurl=http://hpc.ilri.cgiar.org/mirror/fedora/linux/releases/$releasever/Everything/$basearch/os/
 enabled=1
 metadata_expire=7d
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch</code></pre>
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch
+skip_if_unavailable=False
+</code></pre>
 </p>
                 <p>Alternatively, download <code><a href="fedora.repo">fedora.repo</a></code> and <code><a href="fedora-updates.repo">fedora-updates.repo</a></code>.</p>
                 </section>
