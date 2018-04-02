@@ -48,23 +48,23 @@
                 <section>
                     <h3 id="arch">Arch Linux</h3>
                     <p>Add the following to the top of your <code>/etc/pacman.d/mirrorlist</code>:</p>
-                    <pre><code>Server = http://hpc.ilri.cgiar.org/mirror/archlinux/$repo/os/$arch</code></pre>
+                    <pre><code>Server = https://hpc.ilri.cgiar.org/mirror/archlinux/$repo/os/$arch</code></pre>
                 </section>
                 <section>
                     <h3 id="centos">CentOS</h3>
-                    <p>Use <em>hpc.ilri.cgiar.org/mirror</em> in your <code>/etc/yum.repos.d/CentOS-Base.repo</code>, ie:
+                    <p>Use <em>https://hpc.ilri.cgiar.org/mirror</em> in your <code>/etc/yum.repos.d/CentOS-Base.repo</code>, ie:
                     <pre><code>[base]
 name=CentOS-$releasever - Base
-baseurl=http://hpc.ilri.cgiar.org/mirror/centos/$releasever/os/$basearch/
+baseurl=https://hpc.ilri.cgiar.org/mirror/centos/$releasever/os/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever</code></pre>
 </p>
                 <p>Alternatively, download this <code><a href="CentOS-Base.repo">CentOS-Base.repo</a></code>.</p>
                 <h3 id="epel">EPEL</h3>
-                    <p>EPEL 6 & 7 are also available. Use <em>hpc.ilri.cgiar.org/mirror</em> in your <code>/etc/yum.repos.d/epel.repo</code>, ie:
+                    <p>EPEL 6 & 7 are also available. Use <em>https://hpc.ilri.cgiar.org/mirror</em> in your <code>/etc/yum.repos.d/epel.repo</code>, ie:
                     <pre><code>[epel]
 name=Extra Packages for Enterprise Linux 6 - $basearch
-baseurl=http://hpc.ilri.cgiar.org/mirror/epel/6/$basearch
+baseurl=https://hpc.ilri.cgiar.org/mirror/epel/6/$basearch
 failovermethod=priority
 enabled=1
 gpgcheck=1
